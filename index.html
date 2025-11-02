@@ -1,27 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M.D. Dry Cleaners — Expert care for your finest wear</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>M.D. Dry Cleaners — Expert Care for Your Finest Wear</title>
+  <meta name="description" content="Providing premium dry cleaning and laundry services with doorstep pickup and delivery in Laxmi Bai Nagar, New Delhi." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.png" />
 </head>
+
 <body>
   <header class="site-header">
-    <img src="assets/logo.png" alt="M.D. Dry Cleaners logo" class="site-logo">
-    <h1 class="site-title">M.D. Dry Cleaners</h1>
-    <p class="site-tag">Expert care for your finest wear.</p>
+    <div class="header-inner">
+      <img src="assets/logo.png" alt="M.D. Dry Cleaners Logo" class="site-logo main-logo" />
+      <p class="site-tag under-logo">Expert Care for Your Finest Wear</p>
+    </div>
   </header>
 
   <main>
     <section class="hero">
       <h2>Providing premium dry cleaning and laundry services with doorstep pickup and delivery</h2>
-      <button class="btn primary" id="pickupBtn">Pickup Service</button>
-      <button class="btn outline" id="contactScroll">Contact Us</button>
+      <div class="cta">
+        <button id="pickupBtn" class="btn primary">Pickup Service</button>
+        <button id="contactScroll" class="btn outline">Contact Us</button>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h3>Our Services</h3>
+      <div class="services-container" id="serviceList">
+        <div class="service-section">
+          <h4>Clothing</h4>
+          <ul>
+            <li>Shirt – ₹80</li>
+            <li>T-shirt – ₹70</li>
+            <li>Jeans – ₹120</li>
+            <li>Trousers – ₹100</li>
+            <li>Dress – ₹200</li>
+            <li>Gown – ₹250</li>
+          </ul>
+        </div>
+        <div class="service-section">
+          <h4>Household & Others</h4>
+          <ul>
+            <li>Bedsheet – ₹180</li>
+            <li>Pillow Cover – ₹60</li>
+            <li>Curtain – ₹150</li>
+            <li>Blanket – ₹250</li>
+            <li>Carpet – ₹400</li>
+            <li>Shoes – ₹200</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="pickup-form" id="pickup">
+      <h3>Schedule Pickup</h3>
+      <form id="pickupForm">
+        <label>Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label>Phone</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label>Address</label>
+        <textarea id="address" name="address" required></textarea>
+
+        <label>Date</label>
+        <input type="date" id="date" name="date" required />
+
+        <label>Pickup Slot</label>
+        <select id="slot" name="slot" required>
+          <option value="">Select Time Slot</option>
+          <option value="10am - 12pm">10am - 12pm</option>
+          <option value="12pm - 2pm">12pm - 2pm</option>
+          <option value="2pm - 4pm">2pm - 4pm</option>
+          <option value="4pm - 6pm">4pm - 6pm</option>
+          <option value="6pm - 8pm">6pm - 8pm</option>
+        </select>
+
+        <label>Notes (Optional)</label>
+        <input type="text" id="notes" name="notes" />
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Submit</button>
+          <button type="reset" class="btn outline">Clear</button>
+        </div>
+      </form>
+
+      <div id="loading" class="loading">
+        <span class="spinner"></span> Sending...
+      </div>
+      <div id="successMsg" class="success-msg">✅ Request sent successfully!</div>
+    </section>
+
+    <section id="contactUs" class="contact-section">
+      <div class="contact-card">
+        <h4>Contact Us</h4>
+        <p><strong>Phone:</strong> <a href="tel:+919821266799">9821266799</a>, <a href="tel:+919811993799">9811993799</a></p>
+        <p><strong>Address:</strong> Shop No. 13, Laxmi Bai Nagar Market, New Delhi - 110023</p>
+        <p><a href="https://maps.app.goo.gl/8SjwuAZycXU6WgEt5" target="_blank">View on Google Maps</a></p>
+        <button id="waBtn" class="btn whatsapp">Chat on WhatsApp</button>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">© 2025 M.D. Dry Cleaners · Website by M.D. Dry Cleaners</footer>
+  <footer class="footer">
+    © 2025 M.D. Dry Cleaners
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
