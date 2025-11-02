@@ -1,76 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>M.D. Dry Cleaners — Expert care for your finest wear</title>
-  <link rel="icon" href="assets/favicon.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="header-inner">
-      <img src="assets/logo.png" alt="M.D. Dry Cleaners logo" class="site-logo">
-      <h1 class="site-title">M.D. Dry Cleaners</h1>
-      <p class="site-tag">Expert care for your finest wear.</p>
-    </div>
+    <img src="assets/logo.png" alt="M.D. Dry Cleaners logo" class="site-logo">
+    <h1 class="site-title">M.D. Dry Cleaners</h1>
+    <p class="site-tag">Expert care for your finest wear.</p>
   </header>
 
-  <main class="main">
+  <main>
     <section class="hero">
       <h2>Providing premium dry cleaning and laundry services with doorstep pickup and delivery</h2>
-      <div class="cta">
-        <button id="pickupBtn" class="btn primary">Pickup Service</button>
-        <button id="contactScroll" class="btn outline">Contact Us</button>
-      </div>
+      <button class="btn primary" id="pickupBtn">Pickup Service</button>
+      <button class="btn outline" id="contactScroll">Contact Us</button>
     </section>
-
-    <section id="services" class="services">
-      <h3>Our Services</h3>
-      <div id="serviceGrids" class="services-container"></div>
-    </section>
-
-    <aside class="sidebar" id="pickup">
-      <h3>Schedule Pickup</h3>
-      <div id="summary" class="summary-empty">No items selected</div>
-      <div class="total">Total: <span id="total">₹0</span></div>
-      <form id="pickupForm">
-        <label>Name <input id="name" required></label>
-        <label>Phone <input id="phone" required></label>
-        <label>Address <textarea id="address" required></textarea></label>
-        <label>Date <input id="date" type="date" required></label>
-        <label>Slot <select id="slot" required><option value="">Select slot</option></select></label>
-        <label>Notes <input id="notes"></label>
-        <div class="form-actions">
-          <button type="submit" id="submitBtn" class="btn primary">Schedule Pickup</button>
-          <button type="button" id="clearBtn" class="btn outline">Clear</button>
-        </div>
-      </form>
-      <div id="loading" class="loading"><span class="spinner"></span> Sending...</div>
-    </aside>
-
-    <section id="contactUs" class="contact-section">
-      <div class="contact-card">
-        <h4>Contact</h4>
-        <p><strong>Phone:</strong> <a href="tel:+919821266799">9821266799</a>, <a href="tel:+919811993799">9811993799</a></p>
-        <p><strong>Address:</strong> Shop No. 13, Laxmi Bai Nagar Market, New Delhi - 110023</p>
-        <p><a href="https://maps.app.goo.gl/8SjwuAZycXU6WgEt5" target="_blank">View on Google Maps</a></p>
-        <p><button id="contactPopupBtn" class="btn primary" style="background:#25D366">Contact Us</button></p>
-      </div>
-    </section>
-
-    <div id="confirmPopup" class="confirm">
-      <div class="confirm-inner">
-        <div class="check">✓</div>
-        <h4>Thank you!</h4>
-        <p>Your request has been received. We’ll contact you shortly.</p>
-      </div>
-    </div>
   </main>
 
   <footer class="footer">© 2025 M.D. Dry Cleaners · Website by M.D. Dry Cleaners</footer>
-  <button id="waBtn" class="wa-btn">💬</button>
-
   <script src="script.js"></script>
 </body>
 </html>
