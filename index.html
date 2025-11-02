@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
       <img src="assets/logo.png" alt="M.D. Dry Cleaners Logo" class="site-logo main-logo" />
@@ -18,6 +19,7 @@
   </header>
 
   <main>
+    <!-- Hero -->
     <section class="hero">
       <h2>Providing premium dry cleaning and laundry services with doorstep pickup and delivery</h2>
       <div class="cta">
@@ -26,74 +28,187 @@
       </div>
     </section>
 
+    <!-- Services -->
     <section id="services" class="services">
       <h3>Our Services</h3>
+
       <div class="services-container" id="serviceList">
+
+        <!-- Clothing / Men's -->
         <div class="service-section">
-          <h4>Clothing</h4>
+          <h4>Men's Wear</h4>
           <ul>
-            <li>Shirt – ₹80</li>
-            <li>T-shirt – ₹70</li>
-            <li>Jeans – ₹120</li>
-            <li>Trousers – ₹100</li>
-            <li>Dress – ₹200</li>
-            <li>Gown – ₹250</li>
+            <li data-name="Shirt" data-price="80">Shirt – ₹80
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="T-shirt" data-price="70">T-shirt – ₹70
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Jeans" data-price="120">Jeans – ₹120
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Trousers" data-price="100">Trousers – ₹100
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="2-piece coat" data-price="250">2-piece coat – ₹250
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="3-piece coat" data-price="300">3-piece coat – ₹300
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Sherwani" data-price="350">Sherwani – ₹350
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Sweatshirt" data-price="120">Sweatshirt – ₹120
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Sweater" data-price="100">Sweater – ₹100
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Jacket" data-price="180">Jacket – ₹180
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Shawl" data-price="120">Shawl – ₹120
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
           </ul>
         </div>
+
+        <!-- Clothing / Women's -->
         <div class="service-section">
-          <h4>Household & Others</h4>
+          <h4>Women's Wear</h4>
           <ul>
-            <li>Bedsheet – ₹180</li>
-            <li>Pillow Cover – ₹60</li>
-            <li>Curtain – ₹150</li>
-            <li>Blanket – ₹250</li>
-            <li>Carpet – ₹400</li>
-            <li>Shoes – ₹200</li>
+            <li data-name="Dress" data-price="200">Dress – ₹200
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Gown" data-price="250">Gown – ₹250
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Kurta/Kameez" data-price="100">Kurta/Kameez – ₹100
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Salwar" data-price="90">Salwar – ₹90
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Leggings" data-price="90">Leggings – ₹90
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Pajama" data-price="90">Pajama – ₹90
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Dupatta" data-price="80">Dupatta – ₹80
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Blouse" data-price="70">Blouse – ₹70
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Saree" data-price="200">Saree – ₹200
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Lehenga" data-price="350">Lehenga – ₹350
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Cord-set" data-price="180">Cord-set – ₹180
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Plazo" data-price="100">Plazo – ₹100
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
           </ul>
         </div>
+
+        <!-- Household -->
+        <div class="service-section">
+          <h4>Household Items</h4>
+          <ul>
+            <li data-name="Bedsheet" data-price="180">Bedsheet – ₹180
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Pillow Cover" data-price="60">Pillow Cover – ₹60
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Cushion Cover" data-price="70">Cushion Cover – ₹70
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Sofa Cover" data-price="200">Sofa Cover – ₹200
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Curtain" data-price="150">Curtain – ₹150
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Blanket" data-price="250">Blanket – ₹250
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Quilt (Rajai)" data-price="300">Quilt (Rajai) – ₹300
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Carpet" data-price="400">Carpet – ₹400
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Others -->
+        <div class="service-section">
+          <h4>Others</h4>
+          <ul>
+            <li data-name="Bag" data-price="250">Bag – ₹250
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Shoes" data-price="200">Shoes – ₹200
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Raffu" data-price="150">Raffu – ₹150
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+            <li data-name="Steam Press" data-price="50">Steam Press – ₹50
+              <div class="qty-control"><button class="qty-btn minus">−</button><span class="qty">0</span><button class="qty-btn plus">+</button></div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Summary card (hidden until items selected) -->
+      <div id="summaryCard" class="summary-card hidden">
+        <h4>Selected Items</h4>
+        <table id="summaryTable">
+          <thead><tr><th>Item</th><th>Qty</th><th>Subtotal</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="total">Grand Total: ₹<span id="grandTotal">0</span></p>
       </div>
     </section>
 
+    <!-- Pickup form -->
     <section class="pickup-form" id="pickup">
       <h3>Schedule Pickup</h3>
       <form id="pickupForm">
-        <label>Name</label>
-        <input type="text" id="name" name="name" required />
-
-        <label>Phone</label>
-        <input type="tel" id="phone" name="phone" required />
-
-        <label>Address</label>
-        <textarea id="address" name="address" required></textarea>
-
-        <label>Date</label>
-        <input type="date" id="date" name="date" required />
-
+        <label>Name</label><input name="name" required />
+        <label>Phone</label><input name="phone" type="tel" required />
+        <label>Address</label><textarea name="address" required></textarea>
+        <label>Date</label><input type="date" name="date" required />
         <label>Pickup Slot</label>
-        <select id="slot" name="slot" required>
+        <select name="slot" required>
           <option value="">Select Time Slot</option>
-          <option value="10am - 12pm">10am - 12pm</option>
-          <option value="12pm - 2pm">12pm - 2pm</option>
-          <option value="2pm - 4pm">2pm - 4pm</option>
-          <option value="4pm - 6pm">4pm - 6pm</option>
-          <option value="6pm - 8pm">6pm - 8pm</option>
+          <option>10am - 12pm</option>
+          <option>12pm - 2pm</option>
+          <option>2pm - 4pm</option>
+          <option>4pm - 6pm</option>
+          <option>6pm - 8pm</option>
         </select>
-
-        <label>Notes (Optional)</label>
-        <input type="text" id="notes" name="notes" />
-
+        <label>Notes</label><input name="notes" />
         <div class="form-actions">
           <button type="submit" class="btn primary">Submit</button>
           <button type="reset" class="btn outline">Clear</button>
         </div>
       </form>
 
-      <div id="loading" class="loading">
-        <span class="spinner"></span> Sending...
-      </div>
+      <div id="loading" class="loading"><span class="spinner"></span> Sending...</div>
       <div id="successMsg" class="success-msg">✅ Request sent successfully!</div>
     </section>
 
+    <!-- Contact -->
     <section id="contactUs" class="contact-section">
       <div class="contact-card">
         <h4>Contact Us</h4>
@@ -103,11 +218,10 @@
         <button id="waBtn" class="btn whatsapp">Chat on WhatsApp</button>
       </div>
     </section>
+
   </main>
 
-  <footer class="footer">
-    © 2025 M.D. Dry Cleaners
-  </footer>
+  <footer class="footer">© 2025 M.D. Dry Cleaners</footer>
 
   <script src="script.js"></script>
 </body>
