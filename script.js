@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Google Apps Script endpoint (confirmed)
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw8c4fjzl-rteNlO8z1V03T91EixcSUZ_E4xGlZE3yzx-xYIaL0yN7J-sMfntw3Jcfy/exec";
+  // Google Form URL (formResponse)
+  const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd0xZrjiwUZOj1tEwQuul4-zcZ0Xxr90sByNk1ex4peaWco4Q/formResponse";
 
   const waBtn = document.getElementById("waBtn");
   const summaryCard = document.getElementById("summaryCard");
@@ -12,13 +12,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const loading = document.getElementById("loading");
   const success = document.getElementById("successMsg");
 
+  // create popup element
+  const popup = document.createElement("div");
+  popup.className = "confirmation-popup";
+  popup.style.display = "none";
+  document.body.appendChild(popup);
+
   let cart = {};
 
-  // Attach quantity listeners
+  /* ---------- Quantity Controls ---------- */
   document.querySelectorAll(".qty-control").forEach((control) => {
     const li = control.closest("li");
     const name = li.dataset.name;
-    const price = parseInt(li.dataset.price, 10);
+    const price = parseInt(li.dataset.price, 10) || 0;
     const minus = control.querySelector(".minus");
     const plus = control.querySelector(".plus");
     const qtySpan = control.querySelector(".qty");
@@ -39,20 +45,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Update summary and total + glow animation
+  /* ---------- Update summary ---------- */
   function updateSummary() {
     summaryBody.innerHTML = "";
     let total = 0;
+
     Object.entries(cart).forEach(([item, { qty, price }]) => {
       const subtotal = qty * price;
       total += subtotal;
-      const row = `<tr><td>${item}</td><td>${qty}</td><td>₹${subtotal}</td></tr>`;
-      summaryBody.insertAdjacentHTML("beforeend", row);
+      summaryBody.insertAdjacentHTML(
+        "beforeend",
+        `<tr><td>${item}</td><td>${qty}</td><td>₹${subtotal}</td></tr>`
+      );
     });
 
     grandTotal.textContent = total;
 
-    // add glow animation to total
     const totalEl = document.querySelector(".total");
     if (totalEl) {
       totalEl.classList.add("glow");
@@ -62,14 +70,17 @@ document.addEventListener("DOMContentLoaded", () => {
     summaryCard.classList.toggle("hidden", Object.keys(cart).length === 0);
   }
 
-  // WhatsApp quick chat
+  /* ---------- WhatsApp ---------- */
   if (waBtn) {
     waBtn.addEventListener("click", () => {
-      window.open("https://wa.me/919821266799?text=Hi!%20I'd%20like%20to%20book%20a%20pickup.", "_blank");
+      window.open(
+        "https://wa.me/919821266799?text=Hi!%20I'd%20like%20to%20book%20a%20pickup.",
+        "_blank"
+      );
     });
   }
 
-  // Smooth scroll
+  /* ---------- Smooth scroll ---------- */
   if (contactScroll) {
     contactScroll.addEventListener("click", () => {
       document.getElementById("contactUs").scrollIntoView({ behavior: "smooth" });
@@ -81,33 +92,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Form submit -> Google Apps Script
+  /* ---------- popup helper ---------- */
+  function showPopup(message) {
+    popup.textContent = message;
+    popup.style.display = "block";
+    popup.classList.add("show");
+    setTimeout(() => {
+      popup.classList.remove("show");
+      setTimeout(() => (popup.style.display = "none"), 400);
+    }, 2500);
+  }
+
+  /* ---------- Submit to Google Form (no-cors) ---------- */
   if (form) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
       loading.style.display = "block";
       success.style.display = "none";
 
-      const data = new FormData(form);
-      data.append("cart", JSON.stringify(cart));
-      data.append("total", grandTotal.textContent);
+      // Build FormData mapping to your prefilled entry IDs
+      const payload = new FormData();
+      payload.append("entry.184168943", form.name.value.trim());     // Name
+      payload.append("entry.112996281", form.phone.value.trim());    // Phone
+      payload.append("entry.1023556561", form.address.value.trim()); // Address
+      payload.append("entry.1545633040", form.date.value.trim());    // Date
+      payload.append("entry.852038308", form.slot.value.trim());     // Slot
+      payload.append("entry.1044400644", form.notes.value.trim());   // Notes
+      payload.append("entry.802843789", JSON.stringify(cart));       // Cart (JSON)
+      payload.append("entry.77931248", grandTotal.textContent);      // Total
 
-      // Use no-cors mode since GAS is often set that way
-      fetch(SCRIPT_URL, { method: "POST", mode: "no-cors", body: data })
-        .then(() => {
+      try {
+        // no-cors ensures browser will send data to Google Forms endpoint
+        await fetch(FORM_URL, { method: "POST", body: payload, mode: "no-cors" });
+
+        // small delay so popup is visible (no-cors doesn't return a readable response)
+        setTimeout(() => {
           loading.style.display = "none";
-          success.style.display = "block";
+          showPopup("✅ Request sent successfully!");
           form.reset();
           cart = {};
           updateSummary();
           document.querySelectorAll(".qty").forEach((q) => (q.textContent = "0"));
-          setTimeout(() => (success.style.display = "none"), 3000);
-        })
-        .catch((err) => {
-          loading.style.display = "none";
-          console.error(err);
-          alert("⚠️ Something went wrong. Please try again later.");
-        });
+        }, 900);
+      } catch (err) {
+        loading.style.display = "none";
+        console.error("Form submit error:", err);
+        alert("⚠️ Could not send request. Please try again later.");
+      }
     });
   }
 });
